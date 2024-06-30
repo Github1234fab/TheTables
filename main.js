@@ -1,19 +1,26 @@
 //récupération des éléments du DOM
 //récupération de l'input user
-let numberChosenByUser = document.querySelector(".input-choice");
+// let numberChosenByUser = document.querySelector(".input-choice");
+let numberChosenByUser = document.querySelectorAll(".button-choice");
 //récupération du button submit
 let button = document.querySelector(".button");
 //récupération de la basile P pour afficher les résultats
 let displayOperationResult = document.querySelector(".displayMultiplicationResult");
 //récupération de la liste déroulante pour les opérations
 let operationOptions = document.querySelector(".operation");
+//stockage de la valeur de l'input
+let numberValueChosenByUser;
+//écoute de l'événement click sur les buttons de choix de table
+numberChosenByUser.forEach((el) => {
+        el.addEventListener("click", (e) => {
+                console.log(e.target);
+                numberValueChosenByUser = parseFloat(e.target.value);
+        });
+});
 
-
+//écouter l'événement click sur le button submit
 
 button.addEventListener("click", () => {
-        //transformation en nombre de la valeur de l'input
-        let numberValueChosenByUser = parseFloat(numberChosenByUser.value);
-        console.log(numberValueChosenByUser);
         //stockage des symboles d'opérations
         let symbole;
         //stockage de la valeur de l'input
