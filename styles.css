@@ -1,0 +1,30 @@
+.container {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+        gap: 20px;
+        height: 100vh;
+}
+.input {
+        padding: 20px;
+        max-width: 50px;
+}
+.button {
+        max-width: 130px;
+        padding: 20px;
+        border-radius: 5px;
+}
+.wrapper-chosen-operation {
+        padding: 20px;
+}
+.operation {
+        padding: 20px;
+        border-radius: 5px;
+        max-width: 150px;
+}
+.displayMultiplicationResult {
+        padding: 20px;
+        border-radius: 5px;
+        max-width: 150px;
+}
