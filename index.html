@@ -4,35 +4,41 @@
                 <meta charset="UTF-8" />
                 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
                 <link rel="stylesheet" href="styles.css" />
+                <link rel="preconnect" href="https://fonts.googleapis.com" />
+                <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+                <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400..900&display=swap" rel="stylesheet" />
                 <title>The Tables</title>
         </head>
         <body>
                 <div class="container">
-                        <h1>The Tables</h1>
-                        <select class="operation">
-                                <option value="multiplication">Multiplication</option>
-                                <option value="division">Division</option>
-                                <option value="addition">Addition</option>
-                                <option value="soustraction">Soustraction</option>
-                        </select>
+                        <h1 class="title">Tables</h1>
+                        <div class="container-table-shadow">
+                                <div class="wrapper-table-choice">
+                                        <button class="button-choice-table shadow" value="1">1</button>
+                                        <button class="button-choice-table shadow" value="2">2</button>
+                                        <button class="button-choice-table shadow" value="3">3</button>
+                                        <button class="button-choice-table shadow" value="4">4</button>
+                                        <button class="button-choice-table shadow" value="5">5</button>
+                                </div>
+                                <div class="wrapper-table-choice">
+                                        <button class="button-choice-table shadow" value="6">6</button>
+                                        <button class="button-choice-table shadow" value="7">7</button>
+                                        <button class="button-choice-table shadow" value="8">8</button>
+                                        <button class="button-choice-table shadow" value="9">9</button>
+                                        <button class="button-choice-table shadow" value="10">10</button>
+                                </div>
+                        </div>
 
-                   
-                 <div class="wrapper-table-choice">
-                        <!-- <input type="number" class="input-choice"> -->
-                 <button class="button-choice" value="1">1</button>
-                 <button class="button-choice" value="2">2</button>
-                 <button class="button-choice" value="3">3</button>
-                 <button class="button-choice" value="4">4</button>
-                 <button class="button-choice" value="5">5</button>
-                 <button class="button-choice" value="6">6</button>
-                 <button class="button-choice" value="7">7</button>
-                 <button class="button-choice" value="8">8</button>
-                 <button class="button-choice" value="9">9</button>
-                 <button class="button-choice" value="10">10</button>
-                </div>
+                        <div class="wrapper-operations">
+                                <button class="button-choice-operation shadow" value="+">+</button>
+                                <button class="button-choice-operation shadow" value="-">-</button>
+                                <button class="button-choice-operation shadow" value="x">x</button>
+                                <button class="button-choice-operation shadow" value="/">/</button>
 
-                        <button class="button">Submit</button>
-                        <p class="displayMultiplicationResult"></p>
+                                <button class="button shadow background">Submit</button>
+                        </div>
+
+                        <p class="displayMultiplicationResult background"></p>
                 </div>
 
                 <script src="main.js"></script>
