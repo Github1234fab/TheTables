@@ -11,32 +11,44 @@ let displayOperationResult = document.querySelector(".displayMultiplicationResul
 //récupération de la liste déroulante pour les opérations
 let operationOptions = document.querySelector(".operation");
 //stockage de la valeur de l'input
+
+//écouteur sur choix chiffre table
 let numberValueChosenByUser;
+
+//écouteur sur choix opération
+let operationButtonsValueChoice;
+
+function clearStyleOperation() {
+        operationButtonsChoice.forEach((el) => {
+                el.style.boxShadow = "none";
+        });
+}
+function clearStyleNumberTable() {
+        numberChosenByUser.forEach((el) => {
+                el.style.boxShadow = "none";
+        });
+}
+
 //écoute de l'événement click sur les buttons de choix de table
 numberChosenByUser.forEach((el) => {
         el.addEventListener("click", (e) => {
-                console.log(e.target);
+                clearStyleNumberTable();
                 numberValueChosenByUser = parseFloat(e.target.value);
                 el.style.boxShadow = "0 0 10px 1px black inset";
         });
 });
 
-
-let operationButtonsValueChoice;
-
 //écoute de l'événement click sur les buttons de choix d'opération
 operationButtonsChoice.forEach((el) => {
         el.addEventListener("click", (e) => {
-                console.log("operation");
-                console.log(e.target);
+                clearStyleOperation();
                 operationButtonsValueChoice = e.target.value;
-                console.log(operationButtonsValueChoice);
+                styleButtonOperation = el.style.boxShadow = "0 0 10px 1px black inset";
         });
 });
 
 //écouter l'événement click sur le button submit
 button.addEventListener("click", () => {
-        console.log("submit");
         //stockage des symboles d'opérations
         let symbole;
         //stockage de la valeur de l'input
@@ -51,7 +63,6 @@ button.addEventListener("click", () => {
                 switch (operationButtonsValueChoice) {
                         case "x":
                                 result = numberValueChosenByUser * i;
-                                console.log(result);
                                 symbole = "x";
                                 arrayOfResultat.push(`${numberValueChosenByUser} ${symbole} ${i} = ${result}`);
                                 break;
@@ -62,7 +73,7 @@ button.addEventListener("click", () => {
                                 break;
                         case "/":
                                 result = (numberValueChosenByUser / numberValueChosenByUser) * i;
-                                console.log(result);
+
                                 symbole = "/";
                                 arrayOfResultat.push(`${numberValueChosenByUser * i} ${symbole} ${numberValueChosenByUser} = ${result}`);
                                 break;
