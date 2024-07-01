@@ -2,55 +2,42 @@
         margin: 0;
         padding: 0;
         box-sizing: border-box;
+}
+body,
+html {
         font-family: Cinzel;
         font-weight: 300;
         color: rgb(205, 206, 208);
         background: linear-gradient(to left, rgb(29, 32, 42), rgb(37, 38, 54));
 }
 
+.title {
+        text-align: center;
+        grid-row: 1;
+        font-size: 1.5rem;
+        font-weight: 100;
+        color: #e2e2e286;
+        margin-top: 40px;
+}
+
 .container {
         display: flex;
+        flex-direction: column;
         align-items: center;
         flex-direction: column;
         gap: 20px;
         height: 100vh;
-}
-
-.title {
-        font-size: 2rem;
-        font-weight: 100;
-        color: #e2e2e286;
-        margin-top: 40px;
-        text-shadow: 2px 3px 10px 3px rgba(0, 0, 0, 0.75);
-        background-color: transparent;
-}
-
-.input {
-        padding: 20px;
-        max-width: 50px;
-}
-.button {
-        max-width: 130px;
-        padding: 20px;
-        border-radius: 5px;
-        border: none;
-        color: rgb(131, 131, 239);
-}
-.button-choice-operation {
-        padding: 20px;
-        border-radius: 5px;
-        border: none;
 }
 .container-table-shadow {
         display: flex;
         flex-direction: column;
         align-items: center;
         justify-content: center;
-        gap: 20px;
-        min-width: 32%;
+        gap: 10px;
+        max-width: 90%;
         background-color: transparent;
-        box-shadow: 3px 3px 10px 1px rgba(7, 7, 31, 0) inset, -1px -1px 10px 1px rgba(7, 7, 31, 0.528) inset;
-        padding: 30px;
+        box-shadow: 3px 3px 10px 1px rgba(7, 7, 31, 0), -1px -1px 10px 1px rgba(7, 7, 31, 0.528);
+        padding: 10px;
         border-radius: 8px;
 }
 .wrapper-table-choice {
@@ -58,77 +45,94 @@
         align-items: center;
         justify-content: space-around;
         flex-wrap: wrap;
-        gap: 30px;
+        gap: 10px;
         max-width: 100%;
 }
-
 .button-choice-table {
-        padding: 20px;
+        padding: 10px;
         border-radius: 5px;
         min-width: 40px;
         border: none;
         transition: 0.3s ease-in-out;
+        background-color: rgb(29, 32, 42);
+        color: rgb(231, 234, 240);
+        text-shadow: 0px 0px 10px blue;
+        font-family: Cinzel;
+        font-weight: 300;
 }
 .button-choice-table:hover {
         transform: scale(0.9);
 }
+
 .wrapper-operations {
         display: flex;
+        align-items: center;
+        justify-content: center;
         gap: 20px;
         background-color: transparent;
-        box-shadow: 
-        3px 3px 10px 1px rgba(7, 7, 31, 0) inset, 
-        -1px -1px 10px 1px rgba(7, 7, 31, 0.528) inset;
-        padding: 50px;
+        padding: 10px;
+        border-radius: 8px;
+        max-width: 90%;
+}
+
+.button-choice-operation {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 20px;
+        max-height: 40px;
+        max-width: 40px;
+        border-radius: 50%;
+        border: none;
+        background-color: rgb(29, 32, 42);
+        /* color: rgb(221, 228, 246); */
+        color: rgb(248, 24, 24);
+        text-shadow: 0px 0px 10px blue;
+        font-family: Cinzel;
+        font-weight: 900;
+}
+
+.button-submit {
+        max-width: 130px;
+        padding: 20px;
+        border-radius: 5px;
+        border: none;
+        color: rgb(103, 103, 186);
+        background-color: rgb(29, 32, 42);
+        color: rgb(209, 219, 247);
+        text-shadow: 0px 0px 10px blue;
+        font-family: Cinzel;
+        font-weight: 300;
+}
+
+.displayMultiplicationResult {
+        display: flex;
+        align-items: center;
+        align-items: center;
+        justify-content: center;
+        flex-direction: row;
+        flex-wrap: wrap;
+        gap: 10px;
+        padding: 20px;
+        list-style-type: none;
+        max-width: 60%;
+        background-color: transparent;
+        border-radius: 8px;
+}
+.displayMultiplicationResult li {
+        display: flex;
+        align-items: center;
+        flex-direction: row;
+        flex-wrap: wrap;
+        gap: 10px;
+        padding: 10px;
+        list-style-type: none;
+        min-width: 30px;
+        background-color: transparent;
+        box-shadow: 3px 3px 10px 1px rgba(7, 7, 31, 0) , -1px -1px 10px 1px rgba(7, 7, 31, 0.528) ;
         border-radius: 8px;
 }
 
-.operation {
-        padding: 20px;
-        border-radius: 5px;
-        max-width: 200px;
-        border: none;
-        background-color: transparent;
-        align-items: center;
-}
-.displayMultiplicationResult {
-        display: flex;
-        flex-wrap: wrap;
-        gap: 20px;
-        padding: 20px;
-        list-style-type: none;
-        min-width: 300px;
-}
-.displayMultiplicationResult li {
-        flex: 1 1 calc(30% - 20px);
-        box-sizing: border-box;
-}
 .shadow {
         box-shadow: 2px 2px 3px 1px rgba(12, 12, 33, 0.37), -2px -1px 5px 0px rgba(25, 25, 62, 0.225);
-}
-
-@media screen and (max-width: 768px) {
-        .container {
-                height: 100%;
-                gap: 20px;
-        }
-
-        .displayMultiplicationResult {
-                display: flex;
-                flex-wrap: wrap;
-                padding: 20px;
-                border-radius: 5px;
-                max-width: 150px;
-        }
-        .wrapper-table-choice {
-                display: flex;
-                align-items: center;
-                justify-content: space-around;
-                flex-wrap: wrap;
-                gap: 20px;
-                max-width: 100%;
-        }
-        .title {
-                margin-top: 20px;
-        }
 }

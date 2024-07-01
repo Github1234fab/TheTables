@@ -5,7 +5,7 @@ let operationButtonsChoice = document.querySelectorAll(".button-choice-operation
 // let numberChosenByUser = document.querySelector(".input-choice");
 let numberChosenByUser = document.querySelectorAll(".button-choice-table");
 //récupération du button submit
-let button = document.querySelector(".button");
+let button = document.querySelector(".button-submit");
 //récupération de la basile P pour afficher les résultats
 let displayOperationResult = document.querySelector(".displayMultiplicationResult");
 //récupération de la liste déroulante pour les opérations
@@ -45,7 +45,7 @@ button.addEventListener("click", () => {
         let arrayOfResultat = [];
 
         // boucle for pour faire les opérations
-        for (let i = 0; i <= 10; i++) {
+        for (let i = 1; i <= 10; i++) {
                 //pour stocker le résultat des opérations
                 let result;
                 switch (operationButtonsValueChoice) {
