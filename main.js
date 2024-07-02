@@ -88,7 +88,7 @@ button.addEventListener("click", () => {
         arrayOfResultat.forEach((el) => {
                 let displayResult = document.createElement("li");
                 displayResult.textContent = el;
-                displayResult.style.fontSize = "0.8rem";
+                displayResult.style.fontSize = "1.2rem";
                 displayOperationResult.appendChild(displayResult);
         });
 });
