@@ -1,4 +1,3 @@
-//récupération des éléments du DOM
 //récupération des boutons  de choix d'opération
 let operationButtonsChoice = document.querySelectorAll(".button-choice-operation");
 //récupération de l'input user
@@ -18,35 +17,36 @@ let numberValueChosenByUser;
 //écouteur sur choix opération
 let operationButtonsValueChoice;
 
-function clearStyleOperation() {
-        operationButtonsChoice.forEach((el) => {
-                el.style.boxShadow = "none";
-        });
-}
-function clearStyleNumberTable() {
-        numberChosenByUser.forEach((el) => {
-                el.style.boxShadow = "none";
-        });
-}
+// Garde la trace du bouton actuellement sélectionné
+let selectedButton = null;
 
+// ++++++++++++++++++++++++++++++++++++++++++
 //écoute de l'événement click sur les buttons de choix de table
 numberChosenByUser.forEach((el) => {
         el.addEventListener("click", (e) => {
-                clearStyleNumberTable();
                 numberValueChosenByUser = parseFloat(e.target.value);
-                el.style.boxShadow = "0 0 10px 1px black inset";
+                if (selectedButton) {
+                        selectedButton.classList.remove("button-table-chosen");
+                }
+                el.classList.add("button-table-chosen");
+                selectedButton = el;
         });
 });
 
-//écoute de l'événement click sur les buttons de choix d'opération
+// ++++++++++++++++++++++++++++++++++++++++++
+// écoute de l'événement click sur les buttons de choix d'opération
 operationButtonsChoice.forEach((el) => {
         el.addEventListener("click", (e) => {
-                clearStyleOperation();
                 operationButtonsValueChoice = e.target.value;
-                styleButtonOperation = el.style.boxShadow = "0 0 10px 1px black inset";
+                if (selectedButton) {
+                        selectedButton.classList.remove("button-operation-chosen");
+                }
+                el.classList.add("button-operation-chosen");
+                selectedButton = el;
         });
 });
 
+// ++++++++++++++++++++++++++++++++++++++++++
 //écouter l'événement click sur le button submit
 button.addEventListener("click", () => {
         //stockage des symboles d'opérations
@@ -84,11 +84,16 @@ button.addEventListener("click", () => {
                                 break;
                 }
         }
+
+        // ++++++++++++++++++++++++++++++
+        //affichage des résultats dans le DOM
         displayOperationResult.innerHTML = "";
         arrayOfResultat.forEach((el) => {
                 let displayResult = document.createElement("li");
                 displayResult.textContent = el;
                 displayResult.style.fontSize = "1.2rem";
+                displayResult.style.padding = "20px";
+                displayResult.style.boxShadow = "-4px -4px 20px rgb(255, 255, 255), 4px 3px 10px rgba(154, 153, 153, 0.414";
                 displayOperationResult.appendChild(displayResult);
         });
 });
