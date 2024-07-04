@@ -18,18 +18,19 @@ let numberValueChosenByUser;
 let operationButtonsValueChoice;
 
 // Garde la trace du bouton actuellement sélectionné
-let selectedButton = null;
+let selectedTableButton = null;
+let selectedOperationButton = null;
 
 // ++++++++++++++++++++++++++++++++++++++++++
 //écoute de l'événement click sur les buttons de choix de table
 numberChosenByUser.forEach((el) => {
         el.addEventListener("click", (e) => {
                 numberValueChosenByUser = parseFloat(e.target.value);
-                if (selectedButton) {
-                        selectedButton.classList.remove("button-table-chosen");
+                if (selectedTableButton) {
+                        selectedTableButton.classList.remove("button-table-chosen");
                 }
                 el.classList.add("button-table-chosen");
-                selectedButton = el;
+                selectedTableButton = el;
         });
 });
 
@@ -38,11 +39,11 @@ numberChosenByUser.forEach((el) => {
 operationButtonsChoice.forEach((el) => {
         el.addEventListener("click", (e) => {
                 operationButtonsValueChoice = e.target.value;
-                if (selectedButton) {
-                        selectedButton.classList.remove("button-operation-chosen");
+                if (selectedOperationButton) {
+                        selectedOperationButton.classList.remove("button-operation-chosen");
                 }
                 el.classList.add("button-operation-chosen");
-                selectedButton = el;
+                selectedOperationButton = el;
         });
 });
 
