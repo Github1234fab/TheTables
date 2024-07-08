@@ -92,9 +92,7 @@ button.addEventListener("click", () => {
         arrayOfResultat.forEach((el) => {
                 let displayResult = document.createElement("li");
                 displayResult.textContent = el;
-                displayResult.style.fontSize = "1.2rem";
-                displayResult.style.padding = "20px";
-                displayResult.style.boxShadow = "-4px -4px 20px rgb(255, 255, 255), 4px 3px 10px rgba(154, 153, 153, 0.414";
                 displayOperationResult.appendChild(displayResult);
+                displayOperationResult.classList.add("shadowResult");
         });
 });
