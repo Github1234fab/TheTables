@@ -29,6 +29,7 @@ html {
         min-height: 100vh;
         background-color: rgb(232, 232, 232);
         padding: 10px;
+
 }
 .container-table-shadow {
         display: flex;
@@ -40,6 +41,7 @@ html {
         background-color: transparent;
         padding: 10px;
         border-radius: 8px;
+        margin-top: 30px;
 }
 .wrapper-table-choice {
         display: flex;
@@ -124,14 +126,14 @@ html {
 
 .displayMultiplicationResult {
         display: flex;
-        flex-direction: column;
+        flex-direction: row;
         align-items: center;
         justify-content: center;
         flex-wrap: wrap;
         gap: 0px;
         padding: 20px;
         list-style-type: none;
-        max-width: 70%;
+        max-width: 50%;
         background-color: transparent;
         border-radius: 8px;
 }
@@ -166,5 +168,9 @@ html {
         }
         .wrapper-operations {
                 gap: 20px;
+        }
+        .displayMultiplicationResult {
+                flex-direction: row;
+                max-width: 90%;
         }
 }
